@@ -1,0 +1,107 @@
+<section class="admin-page">
+  <aside class="sidebar">
+    <h2>⚙️ Admin Panel</h2>
+
+    <a>Dashboard</a>
+    <a>Usuarios</a>
+    <a>Vendedores</a>
+    <a>Productos</a>
+    <a>Reportes</a>
+    <a routerLink="/">Cerrar sesión</a>
+  </aside>
+
+  <main class="contenido">
+    <h1>Panel de administración</h1>
+
+    <div class="stats">
+      <div class="card">
+        <h3>Usuarios</h3>
+        <strong>1,240</strong>
+      </div>
+
+      <div class="card">
+        <h3>Vendedores</h3>
+        <strong>86</strong>
+      </div>
+
+      <div class="card">
+        <h3>Productos</h3>
+        <strong>542</strong>
+      </div>
+
+      <div class="card">
+        <h3>Ventas</h3>
+        <strong>$45,200</strong>
+      </div>
+    </div>
+
+    <section class="solicitudes">
+  <h2>Solicitudes de vendedores</h2>
+
+  <table>
+
+  <thead>
+    <tr>
+      <th>Negocio</th>
+      <th>Responsable</th>
+      <th>Ubicación</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let solicitud of solicitudes">
+      <td>{{ solicitud.nombre_negocio }}</td>
+      <td>{{ solicitud.responsable }}</td>
+      <td>{{ solicitud.ubicacion }}</td>
+
+      <td>
+        <span
+          [class.estado-aprobado]="solicitud.estado === 'aprobado'"
+          [class.estado-rechazado]="solicitud.estado === 'rechazado'"
+        >
+          {{ solicitud.estado }}
+        </span>
+      </td>
+
+      <td>
+        <button class="aprobar" (click)="aprobar(solicitud)">
+          Aprobar
+        </button>
+
+        <button class="rechazar" (click)="rechazar(solicitud)">
+          Rechazar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+</section>
+
+    <section class="productos">
+      <h2>Productos recientes</h2>
+
+      <div class="productos-grid">
+        <div class="producto">
+          <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=500" />
+          <h3>Canasta de frutas</h3>
+          <p>Frutería López</p>
+        </div>
+
+        <div class="producto">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" />
+          <h3>Audífonos Bluetooth</h3>
+          <p>TecnoShop</p>
+        </div>
+
+        <div class="producto">
+          <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=500" />
+          <h3>Camisa de lino</h3>
+          <p>Moda Local</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</section>

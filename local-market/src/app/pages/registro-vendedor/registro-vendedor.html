@@ -1,0 +1,66 @@
+<section class="vendedor-page">
+  <div class="form-card">
+    <h1>Registro como vendedor</h1>
+    <p>Solicita acceso para vender tus productos en Local Market.</p>
+
+    <label>Nombre del negocio</label>
+    <input
+  type="text"
+  placeholder="Nombre del negocio"
+  [(ngModel)]="nombreNegocio"
+/>
+
+    <label>Nombre del responsable</label>
+    <input
+      type="text"
+      placeholder="Nombre completo"
+      [(ngModel)]="responsable"
+    />
+
+    <label>Teléfono</label>
+    <input
+      type="text"
+      placeholder="Número de contacto"
+      [(ngModel)]="telefono"
+    />
+
+    <label>Correo electrónico</label>
+    <input
+      type="email"
+      placeholder="Correo del negocio"
+      [(ngModel)]="correo"
+    />
+
+    <label>Ubicación</label>
+    <input
+      type="text"
+      placeholder="Comunidad o colonia"
+      [(ngModel)]="ubicacion"
+    />
+
+    <label>Tipo de productos</label>
+    <select [(ngModel)]="tipoProductos">
+      <option>Alimentos</option>
+      <option>Ropa</option>
+      <option>Tecnología</option>
+      <option>Hogar</option>
+      <option>Artesanías</option>
+    </select>
+
+    <label>Modalidad</label>
+    <select [(ngModel)]="modalidad">
+      <option>Solicitar aprobación del administrador</option>
+      <option>Pagar cuota para vender</option>
+    </select>
+
+    <button
+  (click)="enviarSolicitud()"
+  [disabled]="enviando || solicitudEnviada"
+>
+  {{ enviando ? 'Enviando...' : 'Enviar solicitud' }}
+</button>
+<p class="mensaje-exito" *ngIf="solicitudEnviada">
+  Solicitud enviada correctamente. Espera la aprobación del administrador.
+</p>
+  </div>
+</section>

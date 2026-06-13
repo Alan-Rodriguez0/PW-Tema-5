@@ -1,0 +1,35 @@
+<header class="navbar">
+  <div class="logo" routerLink="/">
+    🛍️ <span>Local Market</span>
+  </div>
+
+  <nav>
+    <a routerLink="/">Inicio</a>
+    <a routerLink="/login">Vender</a>
+  </nav>
+
+  <div class="acciones">
+  <button routerLink="/favoritos" class="icon-action favorite-public">
+
+  <svg lucideHeart size="21"></svg>
+
+  <span>
+    {{ favoritosService.cantidad() }}
+  </span>
+
+</button>
+
+  <button routerLink="/carrito" class="icon-action cart-public">
+    <svg lucideShoppingCart size="21"></svg>
+    <span>{{ carritoService.cantidad() }}</span>
+  </button>
+
+  <button routerLink="/login" class="login">
+    Iniciar sesión
+  </button>
+
+  <button routerLink="/registro" class="registro">
+    Registrarse
+  </button>
+</div>
+</header>

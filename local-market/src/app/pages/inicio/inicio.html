@@ -1,0 +1,83 @@
+<app-toast
+  [mensaje]="mensajeToast"
+  [visible]="mostrarToast">
+</app-toast>
+<section class="inicio-page">
+  <app-navbar></app-navbar>
+  <main class="hero-carousel">
+    <button class="arrow left" (click)="anteriorSlide()">‹</button>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <span>{{ slides[slideActual].etiqueta }}</span>
+        <h1>{{ slides[slideActual].titulo }}</h1>
+        <p>{{ slides[slideActual].texto }}</p>
+        <button routerLink="/catalogo">Comprar ahora</button>
+      </div>
+
+      <img [src]="slides[slideActual].imagen" alt="Producto destacado" />
+    </div>
+
+    <button class="arrow right" (click)="siguienteSlide()">›</button>
+
+    <div class="dots">
+      <button
+        *ngFor="let slide of slides; let i = index"
+        [class.active]="i === slideActual"
+        (click)="irSlide(i)"
+      ></button>
+    </div>
+  </main>
+
+  <section class="beneficios">
+    <div>🚚 Envíos locales</div>
+    <div>❤️ Apoya lo local</div>
+    <div>🔒 Pagos seguros</div>
+    <div>🎧 Atención al cliente</div>
+  </section>
+
+  <section class="categorias" id="categorias">
+  <div class="section-title">
+    <h2>Productos destacados</h2>
+  </div>
+
+  <div class="categoria-grid">
+    <div class="categoria" (click)="filtrarCategoria('Todos')">
+      <p>Todos</p>
+    </div>
+
+    <div class="categoria" (click)="filtrarCategoria('Alimentos')">
+      <p>Alimentos</p>
+    </div>
+
+    <div class="categoria" (click)="filtrarCategoria('Tecnología')">
+      <p>Tecnología</p>
+    </div>
+
+    <div class="categoria" (click)="filtrarCategoria('Ropa')">
+      <p>Ropa</p>
+    </div>
+
+    <div class="categoria" (click)="filtrarCategoria('Hogar')">
+      <p>Hogar</p>
+    </div>
+
+    <div class="categoria" (click)="filtrarCategoria('Deportes')">
+      <p>Deportes</p>
+    </div>
+  </div>
+</section>
+
+  <section class="productos">
+
+  <div class="productos-grid">
+    <app-product-card
+  *ngFor="let producto of productosFiltradosInicio"
+  [producto]="producto"
+  (agregar)="agregarCarrito()"
+  (favoritoAgregado)="agregarFavorito()">
+</app-product-card>
+  </div>
+</section>
+  <app-footer></app-footer>
+</section>

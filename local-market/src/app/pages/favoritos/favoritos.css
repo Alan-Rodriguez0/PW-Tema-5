@@ -1,0 +1,27 @@
+.favoritos-page {
+  min-height: 100vh;
+  background: #fff8e1;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.favoritos-page h1 {
+  color: #14532d;
+  margin-bottom: 30px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+@media (max-width: 900px) {
+  .favoritos-page {
+    padding: 18px;
+  }
+
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+}

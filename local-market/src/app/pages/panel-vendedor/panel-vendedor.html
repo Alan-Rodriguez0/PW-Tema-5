@@ -1,0 +1,117 @@
+<section class="panel-page">
+  <aside class="sidebar">
+    <h2>🛍️ Local Market</h2>
+    <a>Dashboard</a>
+    <a>Mis productos</a>
+    <a>Pedidos</a>
+    <a>Ventas</a>
+    <a routerLink="/">Salir</a>
+  </aside>
+
+  <main class="contenido">
+    <h1>Panel del vendedor</h1>
+    <p>Administra tus productos, ventas y pedidos.</p>
+
+    <div class="cards">
+      <div><h3>Productos</h3><strong>12</strong></div>
+      <div><h3>Pedidos</h3><strong>8</strong></div>
+      <div><h3>Ventas</h3><strong>$2,450</strong></div>
+    </div>
+
+    <section class="form-producto">
+      <h2>Agregar producto</h2>
+
+      <input type="text" placeholder="Nombre del producto" [(ngModel)]="nuevoProducto.nombre" />
+<input type="number" placeholder="Precio" [(ngModel)]="nuevoProducto.precio" />
+
+<select [(ngModel)]="nuevoProducto.categoria">
+  <option>Alimentos</option>
+  <option>Ropa</option>
+  <option>Tecnología</option>
+  <option>Hogar</option>
+</select>
+
+<textarea placeholder="Descripción del producto" [(ngModel)]="nuevoProducto.descripcion"></textarea>
+
+<div
+  class="upload-box"
+  (dragover)="$event.preventDefault()"
+  (drop)="soltarImagen($event)"
+  (click)="inputImagen.click()"
+>
+
+  <input
+    #inputImagen
+    type="file"
+    accept="image/*"
+    hidden
+    (change)="seleccionarImagen($event)"
+  />
+
+  <ng-container *ngIf="!previewImagen">
+
+    <svg lucideImage size="50"></svg>
+
+    <h3>Subir imagen</h3>
+
+    <p>
+      Arrastra una imagen aquí o haz clic para seleccionarla
+    </p>
+
+  </ng-container>
+
+  <img
+    *ngIf="previewImagen"
+    [src]="previewImagen"
+    class="preview-img"
+  />
+
+</div>
+
+<button
+  (click)="editando ? guardarCambios() : agregarProducto()"
+  [disabled]="publicando"
+>
+
+  {{
+    editando
+      ? 'Guardar cambios'
+      : 'Publicar producto'
+  }}
+
+</button>
+    </section>
+
+    <section class="tabla">
+      <h2>Mis productos</h2>
+
+      <table>
+  <tr>
+    <th>Producto</th>
+    <th>Precio</th>
+    <th>Estado</th>
+    <th>Acciones</th>
+  </tr>
+
+  <tr *ngFor="let producto of productos; let i = index">
+    <td>{{ producto.nombre }}</td>
+    <td>${{ producto.precio }}</td>
+    <td>{{ producto.estado }}</td>
+
+    <td>
+      <button class="btn-tabla" (click)="editarProducto(producto)">
+  Editar
+</button>
+
+      <button
+        class="btn-tabla eliminar"
+        (click)="eliminarProducto(producto)"
+      >
+        Eliminar
+      </button>
+    </td>
+  </tr>
+</table>
+    </section>
+  </main>
+</section>

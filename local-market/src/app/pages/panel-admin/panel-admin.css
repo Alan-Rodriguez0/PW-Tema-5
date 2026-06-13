@@ -1,0 +1,162 @@
+.admin-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  background: #fff8e1;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  background: #14532d;
+  color: white;
+  padding: 30px;
+}
+
+.sidebar h2 {
+  margin-bottom: 35px;
+}
+
+.sidebar a {
+  display: block;
+  margin: 18px 0;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contenido {
+  padding: 35px;
+}
+
+.contenido h1 {
+  color: #14532d;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 25px;
+}
+
+.card,
+.solicitudes,
+.productos {
+  background: white;
+  border-radius: 22px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card strong {
+  font-size: 30px;
+  color: #166534;
+}
+
+.solicitudes {
+  margin-top: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #eef7e9;
+  color: #14532d;
+}
+
+th,
+td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.aprobar {
+  background: #166534;
+  color: white;
+  border: none;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.rechazar {
+  background: #b91c1c;
+  color: white;
+  border: none;
+  padding: 9px 12px;
+  border-radius: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.productos {
+  margin-top: 30px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.producto {
+  background: #fafafa;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.producto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.producto h3,
+.producto p {
+  padding: 0 15px;
+}
+
+.producto p {
+  color: #666;
+  padding-bottom: 15px;
+}
+
+.estado-aprobado {
+  color: #166534;
+  font-weight: bold;
+}
+
+.estado-rechazado {
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .admin-page {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    text-align: center;
+  }
+
+  .contenido {
+    padding: 18px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    font-size: 13px;
+  }
+}

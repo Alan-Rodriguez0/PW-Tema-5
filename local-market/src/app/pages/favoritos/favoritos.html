@@ -1,0 +1,10 @@
+<section class="favoritos-page">
+  <h1>Mis favoritos ❤️</h1>
+
+  <div class="productos-grid">
+    <app-product-card
+      *ngFor="let producto of favoritos"
+      [producto]="producto">
+    </app-product-card>
+  </div>
+</section>

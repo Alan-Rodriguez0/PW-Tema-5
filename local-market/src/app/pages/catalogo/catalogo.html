@@ -1,0 +1,107 @@
+<app-toast
+  [mensaje]="mensajeToast"
+  [visible]="mostrarToast">
+</app-toast>
+
+<section class="catalogo-page">
+  <header class="topbar">
+    <div class="logo">
+      🛍️ <span>Local Market</span>
+    </div>
+
+    <input
+      type="text"
+      placeholder="Buscar productos..."
+      [(ngModel)]="busqueda"
+    />
+
+    <div class="acciones">
+      <a
+  routerLink="/registro-vendedor"
+  *ngIf="rolUsuario !== 'vendedor' && rolUsuario !== 'admin'"
+  class="vender-btn"
+>
+  Vender
+</a>
+  <div
+  class="favorite-icon"
+  routerLink="/favoritos">
+
+  <svg lucideHeart size="22"></svg>
+
+  <span class="favorite-badge">
+    {{ favoritosService.cantidad() }}
+  </span>
+
+</div>
+  <div
+  class="cart-icon"
+  routerLink="/carrito">
+
+  <svg lucideShoppingCart size="22"></svg>
+
+  <span class="cart-badge">
+  {{ carritoService.cantidad() }}
+</span>
+
+</div>
+
+  <div class="user-menu">
+    <button class="user-icon">
+  <svg lucideUser size="20"></svg>
+</button>
+
+    <div class="dropdown-profile">
+      <div class="profile-top">
+        <div class="profile-avatar">👤</div>
+
+        <div>
+          <h4>{{ nombreUsuario }}</h4>
+<p>{{ correoUsuario }}</p>
+        </div>
+      </div>
+
+      <span class="rol">{{ rolUsuario }}</span>
+
+      <div class="profile-links">
+        <a routerLink="/perfil">Editar perfil</a>
+        <a routerLink="/mis-pedidos">Mis pedidos</a>
+        <a routerLink="/">Cerrar sesión</a>
+        <a
+  routerLink="/panel-vendedor"
+  *ngIf="rolUsuario === 'vendedor'"
+>
+  Panel vendedor
+</a>
+      </div>
+    </div>
+  </div>
+</div>
+  </header>
+
+  <section class="banner">
+    <div>
+      <span>CATÁLOGO LOCAL</span>
+      <h1>Descubre productos increíbles</h1>
+      <p>Compra productos de vendedores de tu comunidad.</p>
+    </div>
+  </section>
+
+  <section class="filtros">
+    <button (click)="filtrarCategoria('Todos')">Todos</button>
+    <button (click)="filtrarCategoria('Alimentos')">Alimentos</button>
+    <button (click)="filtrarCategoria('Tecnología')">Tecnología</button>
+    <button (click)="filtrarCategoria('Ropa')">Ropa</button>
+    <button (click)="filtrarCategoria('Hogar')">Hogar</button>
+    <button (click)="filtrarCategoria('Deportes')">Deportes</button>
+  </section>
+
+  <section class="productos-grid">
+    <app-product-card
+  *ngFor="let producto of productosFiltrados"
+  [producto]="producto"
+  (agregar)="agregarCarrito($event)"
+  (favoritoAgregado)="agregarFavorito()">
+</app-product-card>
+  </section>
+</section>

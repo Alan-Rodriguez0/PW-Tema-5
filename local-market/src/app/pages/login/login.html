@@ -1,0 +1,32 @@
+<section class="login-page">
+  <div class="login-card">
+    <div class="logo">🛍️</div>
+    <h1>Local Market</h1>
+    <p>Inicia sesión para comprar o vender en tu comunidad.</p>
+
+    <label>Correo electrónico</label>
+    <input
+  type="email"
+  placeholder="Ingresa tu correo"
+  [(ngModel)]="correo"
+/>
+
+    <label>Contraseña</label>
+    <input
+  type="password"
+  placeholder="Ingresa tu contraseña"
+  [(ngModel)]="password"
+/>
+
+    <button (click)="iniciarSesion()">
+  Iniciar sesión
+</button>
+
+    <a class="forgot">¿Olvidaste tu contraseña?</a>
+
+    <p class="register-text">
+      ¿No tienes cuenta?
+      <a routerLink="/registro">Regístrate aquí</a>
+    </p>
+  </div>
+</section>

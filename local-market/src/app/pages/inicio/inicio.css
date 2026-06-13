@@ -1,0 +1,289 @@
+.inicio-page {
+  min-height: 100vh;
+  background: #fff8e1;
+  padding: 25px 50px;
+  font-family: Arial, sans-serif;
+  color: #1f1f1f;
+}
+
+.navbar {
+  background: white;
+  border-radius: 18px;
+  padding: 18px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #14532d;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+.logo h2 {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: #166534;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-outline {
+  background: white;
+  border: 2px solid #166534;
+  color: #166534;
+  padding: 10px 18px;
+  border-radius: 10px;
+}
+
+.btn-green {
+  background: #166534;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+}
+
+.hero-carousel {
+  margin-top: 25px;
+  background: white;
+  border-radius: 24px;
+  min-height: 380px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  height: 380px;
+  padding: 40px 70px;
+  gap: 30px;
+}
+
+.hero-text span {
+  background: #166534;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  color: #14532d;
+  margin: 25px 0 10px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #555;
+}
+
+.hero-text button {
+  background: #fbc02d;
+  color: #1f1f1f;
+  padding: 13px 24px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.hero-content img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: #166534;
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 32px;
+  z-index: 2;
+}
+
+.left {
+  left: 18px;
+}
+
+.right {
+  right: 18px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dots button {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.dots button.active {
+  background: #166534;
+  transform: scale(1.3);
+}
+
+.beneficios {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.beneficios div {
+  background: white;
+  padding: 18px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categorias,
+.productos {
+  margin-top: 35px;
+}
+
+.section-title a {
+  color: #166534;
+  font-weight: bold;
+}
+
+.categoria-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+}
+
+.categoria {
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+  font-size: 28px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.categoria p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.producto-card {
+  background: white;
+  border-radius: 18px;
+  padding: 15px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.producto-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.producto-card h3 {
+  margin-bottom: 5px;
+}
+
+.producto-card p {
+  color: #666;
+  margin: 0 0 8px;
+}
+
+.producto-card strong {
+  color: #166534;
+  font-size: 18px;
+}
+
+@media (max-width: 900px) {
+  .inicio-page {
+    padding: 18px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 45px 25px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .hero-content img {
+    height: 230px;
+  }
+
+  .beneficios {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .categoria-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+}

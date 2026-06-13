@@ -1,0 +1,65 @@
+<section class="checkout-page">
+  <h1>Finalizar compra</h1>
+
+  <div class="checkout-layout">
+    <div class="formulario">
+      <h2>Datos de entrega</h2>
+
+      <label>Nombre completo</label>
+      <input type="text" placeholder="Ingresa tu nombre" />
+
+      <label>Teléfono</label>
+      <input type="text" placeholder="Número de contacto" />
+
+      <label>Dirección</label>
+      <textarea placeholder="Calle, colonia, referencia"></textarea>
+
+      <h2>Método de pago</h2>
+
+      <select>
+        <option>Pago contra entrega</option>
+        <option>Transferencia bancaria</option>
+        <option>Tarjeta de crédito o débito</option>
+      </select>
+
+      <button (click)="confirmarCompra()">
+  Confirmar compra
+</button>
+
+<p class="mensaje-exito" *ngIf="compraRealizada">
+  Compra realizada correctamente. Gracias por comprar en Local Market.
+</p>
+    </div>
+
+    <div class="resumen">
+      <h2>Resumen</h2>
+
+      <div class="producto">
+        <span>Canasta de frutas</span>
+        <strong>$120</strong>
+      </div>
+
+      <div class="producto">
+        <span>Audífonos Bluetooth</span>
+        <strong>$450</strong>
+      </div>
+
+      <hr />
+
+      <div class="fila">
+        <span>Subtotal</span>
+        <strong>$570</strong>
+      </div>
+
+      <div class="fila">
+        <span>Envío local</span>
+        <strong>$30</strong>
+      </div>
+
+      <div class="fila total">
+        <span>Total</span>
+        <strong>$600</strong>
+      </div>
+    </div>
+  </div>
+</section>

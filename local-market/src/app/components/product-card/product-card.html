@@ -1,0 +1,29 @@
+<div class="producto-card">
+  <div class="imagen-container">
+  <img [src]="producto.imagen" />
+
+  <button class="favorito" (click)="toggleFavorito()">
+    {{ favorito ? '❤️' : '🤍' }}
+  </button>
+</div>
+
+  <div class="producto-info">
+    <span>{{ producto.categoria }}</span>
+
+    <h3>{{ producto.nombre }}</h3>
+
+    <p>{{ producto.vendedor }}</p>
+
+    <strong>${{ producto.precio }}</strong>
+
+    <div class="botones">
+      <button class="ver" routerLink="/producto">
+        Ver producto
+      </button>
+
+      <button class="carrito" (click)="agregarAlCarrito()">
+  Agregar al carrito
+</button>
+    </div>
+  </div>
+</div>

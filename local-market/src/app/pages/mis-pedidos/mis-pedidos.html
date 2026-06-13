@@ -1,0 +1,31 @@
+<section class="pedidos-page">
+  <h1>Mis pedidos 📦</h1>
+
+  <div class="pedidos-grid">
+
+    <div class="pedido-card" *ngFor="let pedido of pedidos">
+
+      <div class="top">
+        <h2>Pedido #{{ pedido.id }}</h2>
+
+        <span
+          [class.entregado]="pedido.estado === 'Entregado'"
+          [class.camino]="pedido.estado === 'En camino'"
+          [class.procesando]="pedido.estado === 'Procesando'"
+        >
+          {{ pedido.estado }}
+        </span>
+      </div>
+
+      <p><strong>Producto:</strong> {{ pedido.producto }}</p>
+
+      <p><strong>Fecha:</strong> {{ pedido.fecha }}</p>
+
+      <p><strong>Total:</strong> ${{ pedido.total }}</p>
+
+      <button>Ver detalles</button>
+
+    </div>
+
+  </div>
+</section>

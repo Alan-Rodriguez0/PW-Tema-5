@@ -1,0 +1,36 @@
+<section class="detalle-page">
+  <div class="volver" routerLink="/catalogo">← Volver al catálogo</div>
+
+  <div class="producto-detalle">
+    <div class="imagen-box">
+      <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=900" />
+    </div>
+
+    <div class="info-box">
+      <span>Alimentos</span>
+      <h1>Canasta de frutas</h1>
+      <p class="vendedor">Vendido por: <strong>Frutería López</strong></p>
+      <p class="ubicacion">📍 Comunidad local</p>
+
+      <h2>$120.00</h2>
+
+      <p class="descripcion">
+        Canasta con frutas frescas de temporada, seleccionadas por vendedores locales.
+        Ideal para consumo familiar y apoyo al comercio de la comunidad.
+      </p>
+
+      <label>Cantidad</label>
+
+<div class="cantidad-box">
+  <button (click)="disminuir()">-</button>
+  <span>{{ cantidad }}</span>
+  <button (click)="aumentar()">+</button>
+</div>
+
+      <div class="botones">
+        <button class="carrito" routerLink="/carrito">Agregar al carrito</button>
+        <button class="comprar" routerLink="/carrito">Comprar ahora</button>
+      </div>
+    </div>
+  </div>
+</section>

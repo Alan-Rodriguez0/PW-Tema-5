@@ -1,0 +1,52 @@
+<section class="carrito-page">
+  <h1>Carrito de compras</h1>
+
+  <div class="carrito-layout">
+    <div class="productos-carrito">
+      <div class="item" *ngFor="let producto of productos; let i = index">
+        <img [src]="producto.imagen" />
+
+        <div>
+          <h3>{{ producto.nombre }}</h3>
+          <p>{{ producto.vendedor }}</p>
+          <span>${{ producto.precio }}</span>
+        </div>
+
+        <div class="cantidad-box">
+          <button (click)="disminuir(producto)">-</button>
+          <strong>{{ producto.cantidad }}</strong>
+          <button (click)="aumentar(producto)">+</button>
+        </div>
+
+        <button class="eliminar" (click)="eliminar(producto)">Eliminar</button>
+      </div>
+
+      <p class="vacio" *ngIf="productos.length === 0">
+        Tu carrito está vacío.
+      </p>
+    </div>
+
+    <div class="resumen">
+      <h2>Resumen de compra</h2>
+
+      <div class="fila">
+        <span>Subtotal</span>
+        <strong>${{ subtotal }}</strong>
+      </div>
+
+      <div class="fila">
+        <span>Envío local</span>
+        <strong>${{ envio }}</strong>
+      </div>
+
+      <hr />
+
+      <div class="fila total">
+        <span>Total</span>
+        <strong>${{ total }}</strong>
+      </div>
+
+      <button routerLink="/checkout">Finalizar compra</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<section class="perfil-page">
+  <div class="perfil-card">
+    <div class="foto">👤</div>
+
+    <h1>Mi perfil</h1>
+    <p class="rol">Cliente</p>
+
+    <div class="info" *ngIf="!editando">
+  <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+  <p><strong>Correo:</strong> {{ usuario.correo }}</p>
+  <p><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
+  <p><strong>Dirección:</strong> {{ usuario.direccion }}</p>
+</div>
+
+<div class="form-edit" *ngIf="editando">
+  <input type="text" [(ngModel)]="usuario.nombre" />
+  <input type="email" [(ngModel)]="usuario.correo" />
+  <input type="text" [(ngModel)]="usuario.telefono" />
+  <input type="text" [(ngModel)]="usuario.direccion" />
+</div>
+
+<button (click)="cambiarModo()">
+  {{ editando ? 'Guardar cambios' : 'Editar perfil' }}
+</button>
+  </div>
+</section>
